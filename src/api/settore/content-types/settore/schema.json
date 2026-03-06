@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "settori",
+  "info": {
+    "singularName": "settore",
+    "pluralName": "settori",
+    "displayName": "Settore"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "titolo": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "titolo"
+    },
+    "progetti": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::progetto.progetto",
+      "mappedBy": "settore"
+    },
+    "originals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::original.original",
+      "mappedBy": "settore"
+    }
+  }
+}

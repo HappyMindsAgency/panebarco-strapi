@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "pagine_tanto_altro",
+  "info": {
+    "singularName": "pagina-tanto-altro",
+    "pluralName": "pagine-tanto-altro",
+    "displayName": "2.4 ...e tanto altro!"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {}
+}

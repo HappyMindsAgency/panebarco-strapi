@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_contenutos",
+  "info": {
+    "displayName": "contenuto",
+    "icon": "feather"
+  },
+  "options": {},
+  "attributes": {
+    "contenuto": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

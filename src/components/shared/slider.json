@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_sliders",
+  "info": {
+    "displayName": "slider",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "slider": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    }
+  },
+  "config": {}
+}

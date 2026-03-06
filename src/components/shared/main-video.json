@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_shared_main_videos",
+  "info": {
+    "displayName": "mainVideo",
+    "icon": "attachment"
+  },
+  "options": {},
+  "attributes": {
+    "anteprima": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "anteprimaMobile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "tipologia": {
+      "type": "boolean",
+      "default": false
+    },
+    "video": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "tipologia"
+            },
+            true
+          ]
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "embed": {
+      "type": "customField",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "tipologia"
+            },
+            false
+          ]
+        }
+      },
+      "customField": "plugin::oembed.oembed"
+    }
+  },
+  "config": {}
+}

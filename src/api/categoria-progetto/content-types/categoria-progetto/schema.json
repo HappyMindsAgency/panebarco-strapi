@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categorie_progetto",
+  "info": {
+    "singularName": "categoria-progetto",
+    "pluralName": "categorie-progetto",
+    "displayName": "Categoria Progetto"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "titolo": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "titolo"
+    },
+    "progetti": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::progetto.progetto",
+      "mappedBy": "categoria_progetto"
+    }
+  }
+}

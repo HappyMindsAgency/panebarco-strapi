@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_embeds",
+  "info": {
+    "displayName": "embed",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "embed": {
+      "type": "customField",
+      "customField": "plugin::oembed.oembed"
+    }
+  },
+  "config": {}
+}

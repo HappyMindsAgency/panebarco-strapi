@@ -1,0 +1,37 @@
+{
+  "name": "panebarco-strapi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+  },
+  "dependencies": {
+    "@strapi-community/plugin-seo": "^2.1.1",
+    "@strapi/plugin-cloud": "5.36.1",
+    "@strapi/plugin-users-permissions": "5.36.1",
+    "@strapi/strapi": "5.36.1",
+    "better-sqlite3": "12.4.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "strapi-plugin-oembed": "^2.0.2",
+    "styled-components": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0 <=24.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "d9ef53c0-a684-4841-ae7b-8db5cdc62376",
+    "installId": "a07109b50a8f0bd736135d60bce448076184471ecb98b6a9960bd3f14e91c109"
+  }
+}

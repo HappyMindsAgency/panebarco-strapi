@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_masonries",
+  "info": {
+    "displayName": "masonry",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "masonry": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    }
+  },
+  "config": {}
+}

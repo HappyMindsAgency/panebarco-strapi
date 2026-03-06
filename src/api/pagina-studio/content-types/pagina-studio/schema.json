@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "pagine_studio",
+  "info": {
+    "singularName": "pagina-studio",
+    "pluralName": "pagine-studio",
+    "displayName": "2. Studio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {}
+}

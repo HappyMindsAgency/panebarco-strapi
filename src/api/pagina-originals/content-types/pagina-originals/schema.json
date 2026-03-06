@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "pagine_originals",
+  "info": {
+    "singularName": "pagina-originals",
+    "pluralName": "pagine-originals",
+    "displayName": "5. Originals"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {}
+}

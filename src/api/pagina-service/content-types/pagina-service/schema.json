@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "pagine_service",
+  "info": {
+    "singularName": "pagina-service",
+    "pluralName": "pagine-service",
+    "displayName": "2.3 Service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {}
+}

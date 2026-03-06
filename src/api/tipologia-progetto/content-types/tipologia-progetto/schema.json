@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tipologie_progetto",
+  "info": {
+    "singularName": "tipologia-progetto",
+    "pluralName": "tipologie-progetto",
+    "displayName": "Tipologia Progetto"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "titolo": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "titolo"
+    },
+    "progetti": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::progetto.progetto",
+      "mappedBy": "tipologie_progetto"
+    },
+    "originals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::original.original",
+      "mappedBy": "tipologie_progetto"
+    }
+  }
+}

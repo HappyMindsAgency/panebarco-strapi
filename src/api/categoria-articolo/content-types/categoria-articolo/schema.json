@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categorie_articolo",
+  "info": {
+    "singularName": "categoria-articolo",
+    "pluralName": "categorie-articolo",
+    "displayName": "Categoria Articolo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "titolo": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "titolo"
+    },
+    "articoli": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::articolo.articolo",
+      "mappedBy": "categoria_articolo"
+    }
+  }
+}

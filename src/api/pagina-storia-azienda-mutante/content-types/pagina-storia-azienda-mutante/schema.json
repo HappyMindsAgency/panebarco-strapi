@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "pagine_storia_azienda_mutante",
+  "info": {
+    "singularName": "pagina-storia-azienda-mutante",
+    "pluralName": "pagine-storia-azienda-mutante",
+    "displayName": "1.1 Storia di un'azienda mutante"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {}
+}

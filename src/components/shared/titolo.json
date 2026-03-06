@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_titolos",
+  "info": {
+    "displayName": "titolo",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "titolo": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

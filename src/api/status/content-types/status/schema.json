@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "statuses",
+  "info": {
+    "singularName": "status",
+    "pluralName": "statuses",
+    "displayName": "Status"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "titolo": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titolo"
+    },
+    "progetti": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::progetto.progetto",
+      "mappedBy": "status_progetto"
+    },
+    "originals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::original.original",
+      "mappedBy": "status_original"
+    }
+  }
+}

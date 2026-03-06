@@ -1,0 +1,156 @@
+{
+  "kind": "collectionType",
+  "collectionName": "originals",
+  "info": {
+    "singularName": "original",
+    "pluralName": "originals",
+    "displayName": "Original"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "titolo": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "titolo"
+    },
+    "cover": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "intro": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "anno": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
+    "inEvidenza": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "default": false
+    },
+    "mainVideo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "shared.main-video",
+      "repeatable": false
+    },
+    "corpo": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "shared.titolo",
+        "shared.contenuto",
+        "shared.media",
+        "shared.masonry",
+        "shared.slider",
+        "shared.embed"
+      ]
+    },
+    "credits": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "rassegnaStampa": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "shared.link",
+        "shared.file"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "seo-component.seo",
+      "repeatable": false
+    },
+    "settore": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::settore.settore",
+      "inversedBy": "originals"
+    },
+    "status_original": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::status.status",
+      "inversedBy": "originals"
+    },
+    "canali_distribuzione": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::canale-di-distribuzione.canale-di-distribuzione",
+      "mappedBy": "originals"
+    },
+    "tipologie_progetto": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tipologia-progetto.tipologia-progetto",
+      "inversedBy": "originals"
+    }
+  }
+}
