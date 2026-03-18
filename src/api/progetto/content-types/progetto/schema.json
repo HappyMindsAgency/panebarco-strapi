@@ -45,6 +45,14 @@
         "images"
       ]
     },
+    "contenutoImport": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
     "intro": {
       "type": "richtext",
       "pluginOptions": {
@@ -104,7 +112,7 @@
           "localized": true
         }
       },
-      "required": true
+      "required": false
     },
     "rassegnaStampa": {
       "type": "dynamiczone",
@@ -128,16 +136,10 @@
       "component": "seo-component.seo",
       "repeatable": false
     },
-    "settore": {
+    "settori": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::settore.settore",
-      "inversedBy": "progetti"
-    },
-    "status_progetto": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::status.status",
       "inversedBy": "progetti"
     },
     "canali_distribuzione": {
@@ -146,9 +148,9 @@
       "target": "api::canale-di-distribuzione.canale-di-distribuzione",
       "inversedBy": "progetti"
     },
-    "categoria_progetto": {
+    "categorie_progetto": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::categoria-progetto.categoria-progetto",
       "inversedBy": "progetti"
     },
@@ -157,6 +159,14 @@
       "relation": "manyToMany",
       "target": "api::tipologia-progetto.tipologia-progetto",
       "inversedBy": "progetti"
+    },
+    "oldTaxonomies": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }

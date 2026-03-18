@@ -28,12 +28,6 @@
       "type": "uid",
       "targetField": "titolo"
     },
-    "progetti": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::progetto.progetto",
-      "mappedBy": "status_progetto"
-    },
     "originals": {
       "type": "relation",
       "relation": "oneToMany",

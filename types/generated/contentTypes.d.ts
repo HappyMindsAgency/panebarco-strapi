@@ -446,8 +446,8 @@ export interface ApiArticoloArticolo extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    categoria_articolo: Schema.Attribute.Relation<
-      'manyToOne',
+    categorie_articolo: Schema.Attribute.Relation<
+      'manyToMany',
       'api::categoria-articolo.categoria-articolo'
     >;
     contenuto: Schema.Attribute.RichText &
@@ -516,6 +516,12 @@ export interface ApiCanaleDiDistribuzioneCanaleDiDistribuzione
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    descrizione: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -563,10 +569,16 @@ export interface ApiCategoriaArticoloCategoriaArticolo
     };
   };
   attributes: {
-    articoli: Schema.Attribute.Relation<'oneToMany', 'api::articolo.articolo'>;
+    articoli: Schema.Attribute.Relation<'manyToMany', 'api::articolo.articolo'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    descrizione: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -612,12 +624,18 @@ export interface ApiCategoriaProgettoCategoriaProgetto
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    descrizione: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::categoria-progetto.categoria-progetto'
     >;
-    progetti: Schema.Attribute.Relation<'oneToMany', 'api::progetto.progetto'>;
+    progetti: Schema.Attribute.Relation<'manyToMany', 'api::progetto.progetto'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'titolo'> &
       Schema.Attribute.SetPluginOptions<{
@@ -963,7 +981,7 @@ export interface ApiPaginaCommercialsPaginaCommercials
   extends Struct.SingleTypeSchema {
   collectionName: 'pagine_commercials';
   info: {
-    displayName: '2.1 Commercials';
+    displayName: '3.1 Commercials';
     pluralName: 'pagine-commercials';
     singularName: 'pagina-commercials';
   };
@@ -1049,6 +1067,12 @@ export interface ApiPaginaHomePagePaginaHomePage
       'api::pagina-home-page.pagina-home-page'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo-component.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1091,7 +1115,7 @@ export interface ApiPaginaPanebarcosPaginaPanebarcos
   extends Struct.SingleTypeSchema {
   collectionName: 'pagine_panebarcos';
   info: {
-    displayName: '1.2 I Panebarcos';
+    displayName: '2.2 I Panebarcos';
     pluralName: 'pagine-panebarcos';
     singularName: 'pagina-panebarcos';
   };
@@ -1187,7 +1211,7 @@ export interface ApiPaginaPostProduzionePaginaPostProduzione
   extends Struct.SingleTypeSchema {
   collectionName: 'pagine_post_produzione';
   info: {
-    displayName: '2.2 Post-produzione';
+    displayName: '3.2 Post-produzione';
     pluralName: 'pagine-post-produzione';
     singularName: 'pagina-post-produzione';
   };
@@ -1218,7 +1242,7 @@ export interface ApiPaginaPostProduzionePaginaPostProduzione
 export interface ApiPaginaServicePaginaService extends Struct.SingleTypeSchema {
   collectionName: 'pagine_service';
   info: {
-    displayName: '2.3 Service';
+    displayName: '3.3 Service';
     pluralName: 'pagine-service';
     singularName: 'pagina-service';
   };
@@ -1281,7 +1305,7 @@ export interface ApiPaginaStoriaAziendaMutantePaginaStoriaAziendaMutante
   extends Struct.SingleTypeSchema {
   collectionName: 'pagine_storia_azienda_mutante';
   info: {
-    displayName: "1.1 Storia di un'azienda mutante";
+    displayName: "2.1 Storia di un'azienda mutante";
     pluralName: 'pagine-storia-azienda-mutante';
     singularName: 'pagina-storia-azienda-mutante';
   };
@@ -1344,7 +1368,7 @@ export interface ApiPaginaTantoAltroPaginaTantoAltro
   extends Struct.SingleTypeSchema {
   collectionName: 'pagine_tanto_altro';
   info: {
-    displayName: '2.4 ...e tanto altro!';
+    displayName: '3.4 ...e tanto altro!';
     pluralName: 'pagine-tanto-altro';
     singularName: 'pagina-tanto-altro';
   };
@@ -1376,7 +1400,7 @@ export interface ApiPaginaVediamoOscarPaginaVediamoOscar
   extends Struct.SingleTypeSchema {
   collectionName: 'pagine_vediamo_oscar';
   info: {
-    displayName: '1.3 Ci vediamo agli Oscar';
+    displayName: '2.3 Ci vediamo agli Oscar';
     pluralName: 'pagine-vediamo-oscar';
     singularName: 'pagina-vediamo-oscar';
   };
@@ -1431,10 +1455,16 @@ export interface ApiProgettoProgetto extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::canale-di-distribuzione.canale-di-distribuzione'
     >;
-    categoria_progetto: Schema.Attribute.Relation<
-      'manyToOne',
+    categorie_progetto: Schema.Attribute.Relation<
+      'manyToMany',
       'api::categoria-progetto.categoria-progetto'
     >;
+    contenutoImport: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     corpo: Schema.Attribute.DynamicZone<
       [
         'shared.titolo',
@@ -1460,7 +1490,6 @@ export interface ApiProgettoProgetto extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     credits: Schema.Attribute.RichText &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1490,6 +1519,12 @@ export interface ApiProgettoProgetto extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    oldTaxonomies: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     rassegnaStampa: Schema.Attribute.DynamicZone<
       ['shared.link', 'shared.file']
@@ -1505,17 +1540,13 @@ export interface ApiProgettoProgetto extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    settore: Schema.Attribute.Relation<'manyToOne', 'api::settore.settore'>;
+    settori: Schema.Attribute.Relation<'manyToMany', 'api::settore.settore'>;
     slug: Schema.Attribute.UID<'titolo'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    status_progetto: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::status.status'
-    >;
     tipologie_progetto: Schema.Attribute.Relation<
       'manyToMany',
       'api::tipologia-progetto.tipologia-progetto'
@@ -1552,13 +1583,19 @@ export interface ApiSettoreSettore extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    descrizione: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::settore.settore'
     >;
     originals: Schema.Attribute.Relation<'oneToMany', 'api::original.original'>;
-    progetti: Schema.Attribute.Relation<'oneToMany', 'api::progetto.progetto'>;
+    progetti: Schema.Attribute.Relation<'manyToMany', 'api::progetto.progetto'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'titolo'> &
       Schema.Attribute.SetPluginOptions<{
@@ -1601,7 +1638,6 @@ export interface ApiStatusStatus extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::status.status'>;
     originals: Schema.Attribute.Relation<'oneToMany', 'api::original.original'>;
-    progetti: Schema.Attribute.Relation<'oneToMany', 'api::progetto.progetto'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'titolo'>;
     titolo: Schema.Attribute.String &
@@ -1705,6 +1741,12 @@ export interface ApiTipologiaProgettoTipologiaProgetto
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    descrizione: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

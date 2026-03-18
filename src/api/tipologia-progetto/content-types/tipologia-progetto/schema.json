@@ -33,6 +33,14 @@
       },
       "targetField": "titolo"
     },
+    "descrizione": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "progetti": {
       "type": "relation",
       "relation": "manyToMany",

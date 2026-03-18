@@ -33,11 +33,19 @@
       },
       "targetField": "titolo"
     },
+    "descrizione": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "progetti": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::progetto.progetto",
-      "mappedBy": "categoria_progetto"
+      "mappedBy": "categorie_progetto"
     }
   }
 }

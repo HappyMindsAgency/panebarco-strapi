@@ -33,11 +33,19 @@
       },
       "targetField": "titolo"
     },
+    "descrizione": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "articoli": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::articolo.articolo",
-      "mappedBy": "categoria_articolo"
+      "mappedBy": "categorie_articolo"
     }
   }
 }

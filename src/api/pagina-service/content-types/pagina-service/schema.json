@@ -4,7 +4,7 @@
   "info": {
     "singularName": "pagina-service",
     "pluralName": "pagine-service",
-    "displayName": "2.3 Service"
+    "displayName": "3.3 Service"
   },
   "options": {
     "draftAndPublish": true

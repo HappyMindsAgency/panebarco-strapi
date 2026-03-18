@@ -63,9 +63,9 @@
       "component": "seo-component.seo",
       "repeatable": false
     },
-    "categoria_articolo": {
+    "categorie_articolo": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::categoria-articolo.categoria-articolo",
       "inversedBy": "articoli"
     }
