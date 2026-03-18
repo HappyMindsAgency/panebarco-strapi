@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_sottotitolo_typings",
+  "info": {
+    "displayName": "sottotitoloTyping",
+    "icon": "italic"
+  },
+  "options": {},
+  "attributes": {
+    "testo": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

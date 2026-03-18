@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_cta_contattacis",
+  "info": {
+    "displayName": "ctaContattaci",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "titolo": {
+      "type": "string"
+    },
+    "sottotitolo": {
+      "type": "string"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bgColor": {
+      "type": "string",
+      "minLength": 7,
+      "maxLength": 7
+    },
+    "pulsante": {
+      "type": "component",
+      "component": "shared.pulsante",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

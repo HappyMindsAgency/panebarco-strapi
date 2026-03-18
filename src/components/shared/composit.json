@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_composits",
+  "info": {
+    "displayName": "composit",
+    "icon": "gate"
+  },
+  "options": {},
+  "attributes": {
+    "titolo": {
+      "type": "string"
+    },
+    "sottotitolo": {
+      "type": "string"
+    },
+    "contenuto": {
+      "type": "richtext"
+    },
+    "progetti": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::progetto.progetto"
+    }
+  },
+  "config": {}
+}

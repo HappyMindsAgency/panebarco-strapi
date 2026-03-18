@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_pulsantes",
+  "info": {
+    "displayName": "pulsante",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "etichetta": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "targetBlank": {
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

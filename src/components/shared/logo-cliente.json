@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_logo_clientes",
+  "info": {
+    "displayName": "logoCliente",
+    "icon": "eye"
+  },
+  "options": {},
+  "attributes": {
+    "titolo": {
+      "type": "string"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

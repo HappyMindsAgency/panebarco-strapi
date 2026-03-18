@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_container_composits",
+  "info": {
+    "displayName": "containerComposit",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "titolo": {
+      "type": "string"
+    },
+    "composit": {
+      "type": "component",
+      "component": "shared.composit",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

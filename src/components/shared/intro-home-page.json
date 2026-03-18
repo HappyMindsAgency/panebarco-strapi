@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_intro_home_pages",
+  "info": {
+    "displayName": "introHomePage",
+    "icon": "house"
+  },
+  "options": {},
+  "attributes": {
+    "titolo": {
+      "type": "string"
+    },
+    "sottotitolo": {
+      "type": "component",
+      "component": "shared.sottotitolo-typing",
+      "repeatable": true
+    },
+    "contenuto": {
+      "type": "richtext"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "pulsanti": {
+      "type": "component",
+      "component": "shared.pulsante",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

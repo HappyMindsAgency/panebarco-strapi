@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_intros",
+  "info": {
+    "displayName": "intro",
+    "icon": "house"
+  },
+  "options": {},
+  "attributes": {
+    "titolo": {
+      "type": "string"
+    },
+    "contenuto": {
+      "type": "richtext"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_ctas",
+  "info": {
+    "displayName": "ctaOscar",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "titolo": {
+      "type": "string"
+    },
+    "sottotitolo": {
+      "type": "string"
+    },
+    "contenuto": {
+      "type": "richtext"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "pulsante": {
+      "type": "component",
+      "component": "shared.pulsante",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

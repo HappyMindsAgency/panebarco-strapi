@@ -54,6 +54,59 @@ export interface SeoComponentSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_cards';
+  info: {
+    displayName: 'card';
+    icon: 'file';
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText;
+    cover: Schema.Attribute.Media<'images'>;
+    titolo: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCardLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_card_links';
+  info: {
+    displayName: 'cardLink';
+    icon: 'apps';
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText;
+    cover: Schema.Attribute.Media<'images' | 'videos'>;
+    titolo: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface SharedComposit extends Struct.ComponentSchema {
+  collectionName: 'components_shared_composits';
+  info: {
+    displayName: 'composit';
+    icon: 'gate';
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText;
+    progetti: Schema.Attribute.Relation<'oneToMany', 'api::progetto.progetto'>;
+    sottotitolo: Schema.Attribute.String;
+    titolo: Schema.Attribute.String;
+  };
+}
+
+export interface SharedContainerComposit extends Struct.ComponentSchema {
+  collectionName: 'components_shared_container_composits';
+  info: {
+    displayName: 'containerComposit';
+    icon: 'archive';
+  };
+  attributes: {
+    composit: Schema.Attribute.Component<'shared.composit', true>;
+    titolo: Schema.Attribute.String;
+  };
+}
+
 export interface SharedContenuto extends Struct.ComponentSchema {
   collectionName: 'components_shared_contenutos';
   info: {
@@ -62,6 +115,40 @@ export interface SharedContenuto extends Struct.ComponentSchema {
   };
   attributes: {
     contenuto: Schema.Attribute.RichText;
+  };
+}
+
+export interface SharedCta extends Struct.ComponentSchema {
+  collectionName: 'components_shared_ctas';
+  info: {
+    displayName: 'ctaOscar';
+    icon: 'crown';
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText;
+    cover: Schema.Attribute.Media<'images'>;
+    pulsante: Schema.Attribute.Component<'shared.pulsante', false>;
+    sottotitolo: Schema.Attribute.String;
+    titolo: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCtaContattaci extends Struct.ComponentSchema {
+  collectionName: 'components_shared_cta_contattacis';
+  info: {
+    displayName: 'ctaContattaci';
+    icon: 'crown';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 7;
+        minLength: 7;
+      }>;
+    cover: Schema.Attribute.Media<'images'>;
+    pulsante: Schema.Attribute.Component<'shared.pulsante', false>;
+    sottotitolo: Schema.Attribute.String;
+    titolo: Schema.Attribute.String;
   };
 }
 
@@ -88,6 +175,49 @@ export interface SharedFile extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHeader extends Struct.ComponentSchema {
+  collectionName: 'components_shared_headers';
+  info: {
+    displayName: 'header';
+    icon: 'pin';
+  };
+  attributes: {
+    imgTeam: Schema.Attribute.Media<'images'>;
+    sottotitolo: Schema.Attribute.String;
+    titolo: Schema.Attribute.String;
+    titoloTana: Schema.Attribute.String;
+    videoBackground: Schema.Attribute.Media<'videos'>;
+  };
+}
+
+export interface SharedIntro extends Struct.ComponentSchema {
+  collectionName: 'components_shared_intros';
+  info: {
+    displayName: 'intro';
+    icon: 'house';
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText;
+    media: Schema.Attribute.Media<'images' | 'videos'>;
+    titolo: Schema.Attribute.String;
+  };
+}
+
+export interface SharedIntroHomePage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_intro_home_pages';
+  info: {
+    displayName: 'introHomePage';
+    icon: 'house';
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText;
+    cover: Schema.Attribute.Media<'images' | 'videos'>;
+    pulsanti: Schema.Attribute.Component<'shared.pulsante', true>;
+    sottotitolo: Schema.Attribute.Component<'shared.sottotitolo-typing', true>;
+    titolo: Schema.Attribute.String;
+  };
+}
+
 export interface SharedLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_links';
   info: {
@@ -96,6 +226,19 @@ export interface SharedLink extends Struct.ComponentSchema {
   };
   attributes: {
     link: Schema.Attribute.String;
+  };
+}
+
+export interface SharedLogoCliente extends Struct.ComponentSchema {
+  collectionName: 'components_shared_logo_clientes';
+  info: {
+    displayName: 'logoCliente';
+    icon: 'eye';
+  };
+  attributes: {
+    media: Schema.Attribute.Media<'images'>;
+    titolo: Schema.Attribute.String;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -137,6 +280,20 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPulsante extends Struct.ComponentSchema {
+  collectionName: 'components_shared_pulsantes';
+  info: {
+    displayName: 'pulsante';
+    icon: 'cursor';
+  };
+  attributes: {
+    etichetta: Schema.Attribute.String;
+    targetBlank: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    title: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -145,6 +302,17 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
   attributes: {
     slider: Schema.Attribute.Media<'images' | 'videos', true>;
+  };
+}
+
+export interface SharedSottotitoloTyping extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sottotitolo_typings';
+  info: {
+    displayName: 'sottotitoloTyping';
+    icon: 'italic';
+  };
+  attributes: {
+    testo: Schema.Attribute.String;
   };
 }
 
@@ -159,20 +327,48 @@ export interface SharedTitolo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedVideoHeader extends Struct.ComponentSchema {
+  collectionName: 'components_shared_video_headers';
+  info: {
+    displayName: 'headerHomePage';
+    icon: 'play';
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText;
+    pulsante: Schema.Attribute.Component<'shared.pulsante', false>;
+    sottotitolo: Schema.Attribute.String;
+    titolo: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'videos'>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'seo-component.meta-social': SeoComponentMetaSocial;
       'seo-component.seo': SeoComponentSeo;
+      'shared.card': SharedCard;
+      'shared.card-link': SharedCardLink;
+      'shared.composit': SharedComposit;
+      'shared.container-composit': SharedContainerComposit;
       'shared.contenuto': SharedContenuto;
+      'shared.cta': SharedCta;
+      'shared.cta-contattaci': SharedCtaContattaci;
       'shared.embed': SharedEmbed;
       'shared.file': SharedFile;
+      'shared.header': SharedHeader;
+      'shared.intro': SharedIntro;
+      'shared.intro-home-page': SharedIntroHomePage;
       'shared.link': SharedLink;
+      'shared.logo-cliente': SharedLogoCliente;
       'shared.main-video': SharedMainVideo;
       'shared.masonry': SharedMasonry;
       'shared.media': SharedMedia;
+      'shared.pulsante': SharedPulsante;
       'shared.slider': SharedSlider;
+      'shared.sottotitolo-typing': SharedSottotitoloTyping;
       'shared.titolo': SharedTitolo;
+      'shared.video-header': SharedVideoHeader;
     }
   }
 }

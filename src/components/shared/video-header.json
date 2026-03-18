@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_video_headers",
+  "info": {
+    "displayName": "headerHomePage",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "titolo": {
+      "type": "string"
+    },
+    "sottotitolo": {
+      "type": "string"
+    },
+    "contenuto": {
+      "type": "richtext"
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "pulsante": {
+      "type": "component",
+      "component": "shared.pulsante",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}
