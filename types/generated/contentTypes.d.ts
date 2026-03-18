@@ -1006,6 +1006,12 @@ export interface ApiPaginaCommercialsPaginaCommercials
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'shared.cta-contattaci', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     header: Schema.Attribute.Component<'shared.header', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1024,6 +1030,12 @@ export interface ApiPaginaCommercialsPaginaCommercials
       'api::pagina-commercials.pagina-commercials'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo-component.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
