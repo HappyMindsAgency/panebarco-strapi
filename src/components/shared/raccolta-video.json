@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_raccolta_videos",
+  "info": {
+    "displayName": "raccoltaVideo",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "titolo": {
+      "type": "string"
+    },
+    "contenuto": {
+      "type": "richtext"
+    },
+    "video": {
+      "type": "component",
+      "component": "shared.embed",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_composit_case_histories",
+  "info": {
+    "displayName": "compositCaseHistory",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "titolo": {
+      "type": "string"
+    },
+    "sottotitolo": {
+      "type": "string"
+    },
+    "contenuto": {
+      "type": "richtext"
+    },
+    "caseHistory": {
+      "type": "component",
+      "component": "shared.card-link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

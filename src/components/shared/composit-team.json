@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_shared_composits",
+  "collectionName": "components_shared_composit_teams",
   "info": {
-    "displayName": "compositProgetti",
-    "icon": "gate"
+    "displayName": "compositTeam",
+    "icon": "heart"
   },
   "options": {},
   "attributes": {
@@ -15,10 +15,10 @@
     "contenuto": {
       "type": "richtext"
     },
-    "progetti": {
+    "team": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::progetto.progetto"
+      "target": "api::team.team"
     }
   },
   "config": {}

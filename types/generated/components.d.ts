@@ -76,6 +76,8 @@ export interface SharedCardLink extends Struct.ComponentSchema {
   attributes: {
     contenuto: Schema.Attribute.RichText;
     cover: Schema.Attribute.Media<'images' | 'videos'>;
+    tag: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    tags: Schema.Attribute.String;
     titolo: Schema.Attribute.String;
     url: Schema.Attribute.String;
   };
@@ -84,7 +86,7 @@ export interface SharedCardLink extends Struct.ComponentSchema {
 export interface SharedComposit extends Struct.ComponentSchema {
   collectionName: 'components_shared_composits';
   info: {
-    displayName: 'composit';
+    displayName: 'compositProgetti';
     icon: 'gate';
   };
   attributes: {
@@ -95,10 +97,38 @@ export interface SharedComposit extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCompositCaseHistory extends Struct.ComponentSchema {
+  collectionName: 'components_shared_composit_case_histories';
+  info: {
+    displayName: 'compositCaseHistory';
+    icon: 'apps';
+  };
+  attributes: {
+    caseHistory: Schema.Attribute.Component<'shared.card-link', true>;
+    contenuto: Schema.Attribute.RichText;
+    sottotitolo: Schema.Attribute.String;
+    titolo: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCompositTeam extends Struct.ComponentSchema {
+  collectionName: 'components_shared_composit_teams';
+  info: {
+    displayName: 'compositTeam';
+    icon: 'heart';
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText;
+    sottotitolo: Schema.Attribute.String;
+    team: Schema.Attribute.Relation<'oneToMany', 'api::team.team'>;
+    titolo: Schema.Attribute.String;
+  };
+}
+
 export interface SharedContainerComposit extends Struct.ComponentSchema {
   collectionName: 'components_shared_container_composits';
   info: {
-    displayName: 'containerComposit';
+    displayName: 'containerCompositProgetti';
     icon: 'archive';
   };
   attributes: {
@@ -294,6 +324,19 @@ export interface SharedPulsante extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedRaccoltaVideo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_raccolta_videos';
+  info: {
+    displayName: 'raccoltaVideo';
+    icon: 'play';
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText;
+    titolo: Schema.Attribute.String;
+    video: Schema.Attribute.Component<'shared.embed', true>;
+  };
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -350,6 +393,8 @@ declare module '@strapi/strapi' {
       'shared.card': SharedCard;
       'shared.card-link': SharedCardLink;
       'shared.composit': SharedComposit;
+      'shared.composit-case-history': SharedCompositCaseHistory;
+      'shared.composit-team': SharedCompositTeam;
       'shared.container-composit': SharedContainerComposit;
       'shared.contenuto': SharedContenuto;
       'shared.cta': SharedCta;
@@ -365,6 +410,7 @@ declare module '@strapi/strapi' {
       'shared.masonry': SharedMasonry;
       'shared.media': SharedMedia;
       'shared.pulsante': SharedPulsante;
+      'shared.raccolta-video': SharedRaccoltaVideo;
       'shared.slider': SharedSlider;
       'shared.sottotitolo-typing': SharedSottotitoloTyping;
       'shared.titolo': SharedTitolo;
