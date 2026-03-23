@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_shared_video_headers",
+  "collectionName": "components_shared_short_lists",
   "info": {
-    "displayName": "headerHomePage",
-    "icon": "play"
+    "displayName": "shortList",
+    "icon": "bulletList"
   },
   "options": {},
   "attributes": {
@@ -12,17 +12,17 @@
     "contenuto": {
       "type": "richtext"
     },
-    "video": {
+    "cover": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
-        "videos"
+        "images"
       ]
     },
-    "pulsante": {
+    "item": {
       "type": "component",
-      "component": "shared.pulsante",
-      "repeatable": false
+      "component": "shared.contenuto",
+      "repeatable": true
     }
   },
   "config": {}

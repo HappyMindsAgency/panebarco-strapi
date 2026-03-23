@@ -465,6 +465,13 @@ export interface ApiArticoloArticolo extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    inEvidenza: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1018,7 +1025,7 @@ export interface ApiPaginaCommercialsPaginaCommercials
           localized: true;
         };
       }>;
-    intro: Schema.Attribute.RichText &
+    intro: Schema.Attribute.Component<'shared.intro', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1029,6 +1036,13 @@ export interface ApiPaginaCommercialsPaginaCommercials
       'oneToMany',
       'api::pagina-commercials.pagina-commercials'
     >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1059,7 +1073,13 @@ export interface ApiPaginaContattiPaginaContatti
     };
   };
   attributes: {
-    contatti: Schema.Attribute.RichText &
+    contattaci: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    contatti: Schema.Attribute.Component<'shared.composit-card', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1079,6 +1099,13 @@ export interface ApiPaginaContattiPaginaContatti
       'oneToMany',
       'api::pagina-contatti.pagina-contatti'
     >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1129,6 +1156,13 @@ export interface ApiPaginaHomePagePaginaHomePage
       'oneToMany',
       'api::pagina-home-page.pagina-home-page'
     >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1165,12 +1199,6 @@ export interface ApiPaginaOriginalsPaginaOriginals
     };
   };
   attributes: {
-    card: Schema.Attribute.Component<'shared.card', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1186,13 +1214,13 @@ export interface ApiPaginaOriginalsPaginaOriginals
           localized: true;
         };
       }>;
-    header: Schema.Attribute.Component<'shared.header', false> &
+    esploraProgetti: Schema.Attribute.Component<'shared.composit-card', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    intro: Schema.Attribute.Component<'shared.intro', false> &
+    header: Schema.Attribute.Component<'shared.header', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1203,6 +1231,17 @@ export interface ApiPaginaOriginalsPaginaOriginals
       'oneToMany',
       'api::pagina-originals.pagina-originals'
     >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    originalsEvidenza: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::original.original'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1210,6 +1249,37 @@ export interface ApiPaginaOriginalsPaginaOriginals
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPaginaPanebarcoSocialLibraryPaginaPanebarcoSocialLibrary
+  extends Struct.SingleTypeSchema {
+  collectionName: 'pagine_panebarco_social_library';
+  info: {
+    displayName: '8. Panebarco Social Library';
+    pluralName: 'pagine-panebarco-social-library';
+    singularName: 'pagina-panebarco-social-library';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    header: Schema.Attribute.Component<'shared.header', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pagina-panebarco-social-library.pagina-panebarco-social-library'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo-component.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1233,18 +1303,6 @@ export interface ApiPaginaPanebarcosPaginaPanebarcos
     };
   };
   attributes: {
-    comeLavoriamo: Schema.Attribute.Component<'shared.card', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    contenuto: Schema.Attribute.RichText &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1271,6 +1329,13 @@ export interface ApiPaginaPanebarcosPaginaPanebarcos
       'oneToMany',
       'api::pagina-panebarcos.pagina-panebarcos'
     >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1333,6 +1398,13 @@ export interface ApiPaginaPaneblogPaginaPaneblog
       'oneToMany',
       'api::pagina-paneblog.pagina-paneblog'
     >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1389,6 +1461,17 @@ export interface ApiPaginaPortfolioPaginaPortfolio
       'oneToMany',
       'api::pagina-portfolio.pagina-portfolio'
     >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    progettiEvidenza: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::progetto.progetto'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1419,22 +1502,10 @@ export interface ApiPaginaPostProduzionePaginaPostProduzione
     };
   };
   attributes: {
-    card: Schema.Attribute.Component<'shared.card', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    caseHistory: Schema.Attribute.Component<
-      'shared.composit-case-history',
+    containerComposit: Schema.Attribute.Component<
+      'shared.container-composit',
       false
     > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    contenutoAmbiti: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1466,6 +1537,119 @@ export interface ApiPaginaPostProduzionePaginaPostProduzione
       'oneToMany',
       'api::pagina-post-produzione.pagina-post-produzione'
     >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo-component.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPaginaPrivacyPolicyNewsletterPaginaPrivacyPolicyNewsletter
+  extends Struct.SingleTypeSchema {
+  collectionName: 'pagine_privacy_policy_newsletter';
+  info: {
+    displayName: '9.1 Privacy Policy Newsletter';
+    pluralName: 'pagine-privacy-policy-newsletter';
+    singularName: 'pagina-privacy-policy-newsletter';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    header: Schema.Attribute.Component<'shared.header', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pagina-privacy-policy-newsletter.pagina-privacy-policy-newsletter'
+    >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo-component.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPaginaPrivacyPolicyPslPaginaPrivacyPolicyPsl
+  extends Struct.SingleTypeSchema {
+  collectionName: 'pagine_privacy_policy_psl';
+  info: {
+    displayName: '9.2 Privacy Policy PSL';
+    pluralName: 'pagine-privacy-policy-psl';
+    singularName: 'pagina-privacy-policy-psl';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    header: Schema.Attribute.Component<'shared.header', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pagina-privacy-policy-psl.pagina-privacy-policy-psl'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1495,22 +1679,10 @@ export interface ApiPaginaServicePaginaService extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    card: Schema.Attribute.Component<'shared.card', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    caseHistory: Schema.Attribute.Component<
-      'shared.composit-case-history',
+    containerComposit: Schema.Attribute.Component<
+      'shared.container-composit',
       false
     > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    contenutoAmbiti: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1542,6 +1714,13 @@ export interface ApiPaginaServicePaginaService extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::pagina-service.pagina-service'
     >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1597,7 +1776,20 @@ export interface ApiPaginaServiziPaginaServizi extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::pagina-servizi.pagina-servizi'
     >;
-    loghi: Schema.Attribute.Component<'shared.logo-cliente', true> &
+    loghi: Schema.Attribute.Component<'shared.titolo', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    originals: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1610,7 +1802,7 @@ export interface ApiPaginaServiziPaginaServizi extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    servizi: Schema.Attribute.Component<'shared.card-link', true> &
+    servizi: Schema.Attribute.Component<'shared.cta', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1677,6 +1869,13 @@ export interface ApiPaginaStoriaAziendaMutantePaginaStoriaAziendaMutante
       'oneToMany',
       'api::pagina-storia-azienda-mutante.pagina-storia-azienda-mutante'
     >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     raccoltaVideo: Schema.Attribute.Component<'shared.raccolta-video', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1712,7 +1911,7 @@ export interface ApiPaginaStudioPaginaStudio extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    card: Schema.Attribute.Component<'shared.card', true> &
+    contenutoProtagonisti: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1744,10 +1943,11 @@ export interface ApiPaginaStudioPaginaStudio extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::pagina-studio.pagina-studio'
     >;
-    presentazione: Schema.Attribute.RichText &
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
@@ -1755,6 +1955,12 @@ export interface ApiPaginaStudioPaginaStudio extends Struct.SingleTypeSchema {
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
+        };
+      }>;
+    sliderProtagonisti: Schema.Attribute.Media<'images', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     updatedAt: Schema.Attribute.DateTime;
@@ -1789,7 +1995,7 @@ export interface ApiPaginaTantoAltroPaginaTantoAltro
           localized: true;
         };
       }>;
-    ctaLibrary: Schema.Attribute.Component<'shared.cta-contattaci', false> &
+    ctaLibrary: Schema.Attribute.Component<'shared.cta', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1812,19 +2018,20 @@ export interface ApiPaginaTantoAltroPaginaTantoAltro
       'oneToMany',
       'api::pagina-tanto-altro.pagina-tanto-altro'
     >;
-    pensieri: Schema.Attribute.Component<
-      'shared.composit-case-history',
-      false
-    > &
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    pensieri: Schema.Attribute.Component<'shared.card-link', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    progettiSpeciali: Schema.Attribute.Component<
-      'shared.composit-case-history',
-      false
-    > &
+    progettiSpeciali: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1860,6 +2067,12 @@ export interface ApiPaginaVediamoOscarPaginaVediamoOscar
     };
   };
   attributes: {
+    cosaCrediamo: Schema.Attribute.Component<'shared.short-list', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     cosaSogniamo: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1881,25 +2094,20 @@ export interface ApiPaginaVediamoOscarPaginaVediamoOscar
           localized: true;
         };
       }>;
-    intro: Schema.Attribute.Component<'shared.intro', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::pagina-vediamo-oscar.pagina-vediamo-oscar'
     >;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo-component.seo', false> &
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.Private &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
-    sezioneValori: Schema.Attribute.Component<'shared.card', true> &
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2789,10 +2997,13 @@ declare module '@strapi/strapi' {
       'api::pagina-contatti.pagina-contatti': ApiPaginaContattiPaginaContatti;
       'api::pagina-home-page.pagina-home-page': ApiPaginaHomePagePaginaHomePage;
       'api::pagina-originals.pagina-originals': ApiPaginaOriginalsPaginaOriginals;
+      'api::pagina-panebarco-social-library.pagina-panebarco-social-library': ApiPaginaPanebarcoSocialLibraryPaginaPanebarcoSocialLibrary;
       'api::pagina-panebarcos.pagina-panebarcos': ApiPaginaPanebarcosPaginaPanebarcos;
       'api::pagina-paneblog.pagina-paneblog': ApiPaginaPaneblogPaginaPaneblog;
       'api::pagina-portfolio.pagina-portfolio': ApiPaginaPortfolioPaginaPortfolio;
       'api::pagina-post-produzione.pagina-post-produzione': ApiPaginaPostProduzionePaginaPostProduzione;
+      'api::pagina-privacy-policy-newsletter.pagina-privacy-policy-newsletter': ApiPaginaPrivacyPolicyNewsletterPaginaPrivacyPolicyNewsletter;
+      'api::pagina-privacy-policy-psl.pagina-privacy-policy-psl': ApiPaginaPrivacyPolicyPslPaginaPrivacyPolicyPsl;
       'api::pagina-service.pagina-service': ApiPaginaServicePaginaService;
       'api::pagina-servizi.pagina-servizi': ApiPaginaServiziPaginaServizi;
       'api::pagina-storia-azienda-mutante.pagina-storia-azienda-mutante': ApiPaginaStoriaAziendaMutantePaginaStoriaAziendaMutante;

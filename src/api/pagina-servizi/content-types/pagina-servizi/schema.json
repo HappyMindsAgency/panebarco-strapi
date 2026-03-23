@@ -15,6 +15,15 @@
     }
   },
   "attributes": {
+    "nomePagina": {
+      "type": "string",
+      "private": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
     "header": {
       "type": "component",
       "pluginOptions": {
@@ -42,7 +51,7 @@
           "localized": true
         }
       },
-      "component": "shared.card-link",
+      "component": "shared.cta",
       "repeatable": true
     },
     "loghi": {
@@ -52,8 +61,16 @@
           "localized": true
         }
       },
-      "component": "shared.logo-cliente",
+      "component": "shared.titolo",
       "repeatable": true
+    },
+    "originals": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "cta": {
       "type": "component",

@@ -15,6 +15,15 @@
     }
   },
   "attributes": {
+    "nomePagina": {
+      "type": "string",
+      "private": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
     "header": {
       "type": "component",
       "pluginOptions": {
@@ -25,25 +34,15 @@
       "component": "shared.header",
       "repeatable": false
     },
-    "intro": {
+    "cosaCrediamo": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "shared.intro",
+      "component": "shared.short-list",
       "repeatable": false
-    },
-    "sezioneValori": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.card",
-      "repeatable": true
     },
     "cosaSogniamo": {
       "type": "richtext",

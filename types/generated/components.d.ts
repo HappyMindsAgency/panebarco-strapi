@@ -97,6 +97,22 @@ export interface SharedComposit extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCompositCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_composit_cards';
+  info: {
+    displayName: 'compositCard';
+    icon: 'grid';
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText;
+    item: Schema.Attribute.Component<'shared.card', true>;
+    pulsante: Schema.Attribute.Component<'shared.pulsante', false>;
+    pulsanteBool: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    sottotitolo: Schema.Attribute.String;
+    titolo: Schema.Attribute.String;
+  };
+}
+
 export interface SharedCompositCaseHistory extends Struct.ComponentSchema {
   collectionName: 'components_shared_composit_case_histories';
   info: {
@@ -133,6 +149,7 @@ export interface SharedContainerComposit extends Struct.ComponentSchema {
   };
   attributes: {
     composit: Schema.Attribute.Component<'shared.composit', true>;
+    pulsante: Schema.Attribute.Component<'shared.pulsante', false>;
     titolo: Schema.Attribute.String;
   };
 }
@@ -213,6 +230,7 @@ export interface SharedHeader extends Struct.ComponentSchema {
   };
   attributes: {
     imgTeam: Schema.Attribute.Media<'images'>;
+    imgTeamBool: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     sottotitolo: Schema.Attribute.String;
     titolo: Schema.Attribute.String;
     titoloTana: Schema.Attribute.String;
@@ -229,6 +247,7 @@ export interface SharedIntro extends Struct.ComponentSchema {
   attributes: {
     contenuto: Schema.Attribute.RichText;
     media: Schema.Attribute.Media<'images' | 'videos'>;
+    mediaBool: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     titolo: Schema.Attribute.String;
   };
 }
@@ -337,6 +356,20 @@ export interface SharedRaccoltaVideo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedShortList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_short_lists';
+  info: {
+    displayName: 'shortList';
+    icon: 'bulletList';
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText;
+    cover: Schema.Attribute.Media<'images'>;
+    item: Schema.Attribute.Component<'shared.contenuto', true>;
+    titolo: Schema.Attribute.String;
+  };
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -379,7 +412,6 @@ export interface SharedVideoHeader extends Struct.ComponentSchema {
   attributes: {
     contenuto: Schema.Attribute.RichText;
     pulsante: Schema.Attribute.Component<'shared.pulsante', false>;
-    sottotitolo: Schema.Attribute.String;
     titolo: Schema.Attribute.String;
     video: Schema.Attribute.Media<'videos'>;
   };
@@ -393,6 +425,7 @@ declare module '@strapi/strapi' {
       'shared.card': SharedCard;
       'shared.card-link': SharedCardLink;
       'shared.composit': SharedComposit;
+      'shared.composit-card': SharedCompositCard;
       'shared.composit-case-history': SharedCompositCaseHistory;
       'shared.composit-team': SharedCompositTeam;
       'shared.container-composit': SharedContainerComposit;
@@ -411,6 +444,7 @@ declare module '@strapi/strapi' {
       'shared.media': SharedMedia;
       'shared.pulsante': SharedPulsante;
       'shared.raccolta-video': SharedRaccoltaVideo;
+      'shared.short-list': SharedShortList;
       'shared.slider': SharedSlider;
       'shared.sottotitolo-typing': SharedSottotitoloTyping;
       'shared.titolo': SharedTitolo;

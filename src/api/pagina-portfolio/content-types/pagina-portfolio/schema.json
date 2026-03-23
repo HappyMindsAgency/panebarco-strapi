@@ -15,6 +15,15 @@
     }
   },
   "attributes": {
+    "nomePagina": {
+      "type": "string",
+      "private": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
     "header": {
       "type": "component",
       "pluginOptions": {
@@ -34,6 +43,11 @@
       },
       "component": "shared.intro",
       "repeatable": false
+    },
+    "progettiEvidenza": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::progetto.progetto"
     },
     "cta": {
       "type": "component",

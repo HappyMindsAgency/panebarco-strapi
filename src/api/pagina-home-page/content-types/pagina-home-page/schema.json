@@ -15,6 +15,15 @@
     }
   },
   "attributes": {
+    "nomePagina": {
+      "type": "string",
+      "private": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
     "header": {
       "type": "component",
       "pluginOptions": {

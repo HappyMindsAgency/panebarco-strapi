@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_shared_composit_cards",
+  "info": {
+    "displayName": "compositCard",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "titolo": {
+      "type": "string"
+    },
+    "sottotitolo": {
+      "type": "string"
+    },
+    "contenuto": {
+      "type": "richtext"
+    },
+    "item": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true
+    },
+    "pulsanteBool": {
+      "type": "boolean",
+      "default": false
+    },
+    "pulsante": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "pulsanteBool"
+            },
+            true
+          ]
+        }
+      },
+      "component": "shared.pulsante",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

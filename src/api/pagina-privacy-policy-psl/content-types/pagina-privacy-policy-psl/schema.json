@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "pagine_contatti",
+  "collectionName": "pagine_privacy_policy_psl",
   "info": {
-    "singularName": "pagina-contatti",
-    "pluralName": "pagine-contatti",
-    "displayName": "7. Contatti"
+    "singularName": "pagina-privacy-policy-psl",
+    "pluralName": "pagine-privacy-policy-psl",
+    "displayName": "9.2 Privacy Policy PSL"
   },
   "options": {
     "draftAndPublish": true
@@ -15,15 +15,6 @@
     }
   },
   "attributes": {
-    "nomePagina": {
-      "type": "string",
-      "private": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
     "header": {
       "type": "component",
       "pluginOptions": {
@@ -34,17 +25,7 @@
       "component": "shared.header",
       "repeatable": false
     },
-    "contatti": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.composit-card",
-      "repeatable": false
-    },
-    "contattaci": {
+    "contenuto": {
       "type": "richtext",
       "pluginOptions": {
         "i18n": {

@@ -15,6 +15,15 @@
     }
   },
   "attributes": {
+    "nomePagina": {
+      "type": "string",
+      "private": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
     "header": {
       "type": "component",
       "pluginOptions": {
@@ -25,25 +34,20 @@
       "component": "shared.header",
       "repeatable": false
     },
-    "intro": {
+    "esploraProgetti": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "shared.intro",
+      "component": "shared.composit-card",
       "repeatable": false
     },
-    "card": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.card",
-      "repeatable": true
+    "originalsEvidenza": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::original.original"
     },
     "ctaOscar": {
       "type": "component",

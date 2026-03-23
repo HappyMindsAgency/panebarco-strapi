@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "pagine_panebarco_social_library",
+  "info": {
+    "singularName": "pagina-panebarco-social-library",
+    "pluralName": "pagine-panebarco-social-library",
+    "displayName": "8. Panebarco Social Library"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "shared.header",
+      "repeatable": false
+    },
+    "contenuto": {
+      "type": "richtext"
+    },
+    "seo": {
+      "type": "component",
+      "component": "seo-component.seo",
+      "repeatable": false
+    }
+  }
+}

@@ -22,8 +22,22 @@
         "videos"
       ]
     },
+    "imgTeamBool": {
+      "type": "boolean",
+      "default": false
+    },
     "imgTeam": {
       "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "imgTeamBool"
+            },
+            true
+          ]
+        }
+      },
       "multiple": false,
       "allowedTypes": [
         "images"

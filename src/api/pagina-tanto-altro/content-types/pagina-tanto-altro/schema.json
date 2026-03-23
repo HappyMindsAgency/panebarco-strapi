@@ -15,6 +15,15 @@
     }
   },
   "attributes": {
+    "nomePagina": {
+      "type": "string",
+      "private": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
     "header": {
       "type": "component",
       "pluginOptions": {
@@ -36,14 +45,12 @@
       "repeatable": false
     },
     "progettiSpeciali": {
-      "type": "component",
+      "type": "richtext",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "component": "shared.composit-case-history",
-      "repeatable": false
+      }
     },
     "pensieri": {
       "type": "component",
@@ -52,8 +59,8 @@
           "localized": true
         }
       },
-      "component": "shared.composit-case-history",
-      "repeatable": false
+      "component": "shared.card-link",
+      "repeatable": true
     },
     "ctaLibrary": {
       "type": "component",
@@ -62,7 +69,7 @@
           "localized": true
         }
       },
-      "component": "shared.cta-contattaci",
+      "component": "shared.cta",
       "repeatable": false
     },
     "cta": {

@@ -13,6 +13,11 @@
       "type": "component",
       "component": "shared.composit",
       "repeatable": true
+    },
+    "pulsante": {
+      "type": "component",
+      "component": "shared.pulsante",
+      "repeatable": false
     }
   },
   "config": {}

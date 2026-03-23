@@ -68,6 +68,15 @@
       "relation": "manyToMany",
       "target": "api::categoria-articolo.categoria-articolo",
       "inversedBy": "articoli"
+    },
+    "inEvidenza": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": false
     }
   }
 }

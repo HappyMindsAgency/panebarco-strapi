@@ -12,8 +12,22 @@
     "contenuto": {
       "type": "richtext"
     },
+    "mediaBool": {
+      "type": "boolean",
+      "default": false
+    },
     "media": {
       "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "mediaBool"
+            },
+            true
+          ]
+        }
+      },
       "multiple": false,
       "allowedTypes": [
         "images",

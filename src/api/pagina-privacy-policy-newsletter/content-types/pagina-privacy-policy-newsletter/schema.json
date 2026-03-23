@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "pagine_panebarcos",
+  "collectionName": "pagine_privacy_policy_newsletter",
   "info": {
-    "singularName": "pagina-panebarcos",
-    "pluralName": "pagine-panebarcos",
-    "displayName": "2.2 I Panebarcos"
+    "singularName": "pagina-privacy-policy-newsletter",
+    "pluralName": "pagine-privacy-policy-newsletter",
+    "displayName": "9.1 Privacy Policy Newsletter"
   },
   "options": {
     "draftAndPublish": true
@@ -17,10 +17,9 @@
   "attributes": {
     "nomePagina": {
       "type": "string",
-      "private": true,
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       }
     },
@@ -34,35 +33,13 @@
       "component": "shared.header",
       "repeatable": false
     },
-    "intro": {
-      "type": "component",
+    "contenuto": {
+      "type": "richtext",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "component": "shared.intro",
-      "repeatable": false
-    },
-    "team": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.composit-team",
-      "repeatable": true
-    },
-    "cta": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.cta-contattaci",
-      "repeatable": false
+      }
     },
     "seo": {
       "type": "component",
