@@ -1145,17 +1145,17 @@ export interface ApiPaginaCookiePolicyPaginaCookiePolicy
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    header: Schema.Attribute.Component<'shared.header', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::pagina-cookie-policy.pagina-cookie-policy'
     >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1328,6 +1328,7 @@ export interface ApiPaginaPanebarcoSocialLibraryPaginaPanebarcoSocialLibrary
       'api::pagina-panebarco-social-library.pagina-panebarco-social-library'
     > &
       Schema.Attribute.Private;
+    nomePagina: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
@@ -1633,12 +1634,6 @@ export interface ApiPaginaPrivacyPolicyNewsletterPaginaPrivacyPolicyNewsletter
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    header: Schema.Attribute.Component<'shared.header', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1689,17 +1684,17 @@ export interface ApiPaginaPrivacyPolicyPslPaginaPrivacyPolicyPsl
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    header: Schema.Attribute.Component<'shared.header', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::pagina-privacy-policy-psl.pagina-privacy-policy-psl'
     >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1739,17 +1734,17 @@ export interface ApiPaginaPrivacyPolicyPaginaPrivacyPolicy
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    header: Schema.Attribute.Component<'shared.header', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::pagina-privacy-policy.pagina-privacy-policy'
     >;
+    nomePagina: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{

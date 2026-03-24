@@ -23,16 +23,6 @@
         }
       }
     },
-    "header": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.header",
-      "repeatable": false
-    },
     "contenuto": {
       "type": "richtext",
       "pluginOptions": {
