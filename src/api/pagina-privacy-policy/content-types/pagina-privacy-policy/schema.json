@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "pagine_privacy_policy_psl",
+  "collectionName": "pagine_privacy_policy",
   "info": {
-    "singularName": "pagina-privacy-policy-psl",
-    "pluralName": "pagine-privacy-policy-psl",
-    "displayName": "9.3 Privacy Policy PSL"
+    "singularName": "pagina-privacy-policy",
+    "pluralName": "pagine-privacy-policy",
+    "displayName": "9.1 Privacy Policy"
   },
   "options": {
     "draftAndPublish": true

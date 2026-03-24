@@ -1119,6 +1119,56 @@ export interface ApiPaginaContattiPaginaContatti
   };
 }
 
+export interface ApiPaginaCookiePolicyPaginaCookiePolicy
+  extends Struct.SingleTypeSchema {
+  collectionName: 'pagine_cookie_policy';
+  info: {
+    displayName: '9.4 Cookie Policy';
+    pluralName: 'pagine-cookie-policy';
+    singularName: 'pagina-cookie-policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    header: Schema.Attribute.Component<'shared.header', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pagina-cookie-policy.pagina-cookie-policy'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo-component.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPaginaHomePagePaginaHomePage
   extends Struct.SingleTypeSchema {
   collectionName: 'pagine_home_page';
@@ -1561,7 +1611,7 @@ export interface ApiPaginaPrivacyPolicyNewsletterPaginaPrivacyPolicyNewsletter
   extends Struct.SingleTypeSchema {
   collectionName: 'pagine_privacy_policy_newsletter';
   info: {
-    displayName: '9.1 Privacy Policy Newsletter';
+    displayName: '9.2 Privacy Policy Newsletter';
     pluralName: 'pagine-privacy-policy-newsletter';
     singularName: 'pagina-privacy-policy-newsletter';
   };
@@ -1617,7 +1667,7 @@ export interface ApiPaginaPrivacyPolicyPslPaginaPrivacyPolicyPsl
   extends Struct.SingleTypeSchema {
   collectionName: 'pagine_privacy_policy_psl';
   info: {
-    displayName: '9.2 Privacy Policy PSL';
+    displayName: '9.3 Privacy Policy PSL';
     pluralName: 'pagine-privacy-policy-psl';
     singularName: 'pagina-privacy-policy-psl';
   };
@@ -1649,6 +1699,56 @@ export interface ApiPaginaPrivacyPolicyPslPaginaPrivacyPolicyPsl
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::pagina-privacy-policy-psl.pagina-privacy-policy-psl'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo-component.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPaginaPrivacyPolicyPaginaPrivacyPolicy
+  extends Struct.SingleTypeSchema {
+  collectionName: 'pagine_privacy_policy';
+  info: {
+    displayName: '9.1 Privacy Policy';
+    pluralName: 'pagine-privacy-policy';
+    singularName: 'pagina-privacy-policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    header: Schema.Attribute.Component<'shared.header', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pagina-privacy-policy.pagina-privacy-policy'
     >;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
@@ -2995,6 +3095,7 @@ declare module '@strapi/strapi' {
       'api::original.original': ApiOriginalOriginal;
       'api::pagina-commercials.pagina-commercials': ApiPaginaCommercialsPaginaCommercials;
       'api::pagina-contatti.pagina-contatti': ApiPaginaContattiPaginaContatti;
+      'api::pagina-cookie-policy.pagina-cookie-policy': ApiPaginaCookiePolicyPaginaCookiePolicy;
       'api::pagina-home-page.pagina-home-page': ApiPaginaHomePagePaginaHomePage;
       'api::pagina-originals.pagina-originals': ApiPaginaOriginalsPaginaOriginals;
       'api::pagina-panebarco-social-library.pagina-panebarco-social-library': ApiPaginaPanebarcoSocialLibraryPaginaPanebarcoSocialLibrary;
@@ -3004,6 +3105,7 @@ declare module '@strapi/strapi' {
       'api::pagina-post-produzione.pagina-post-produzione': ApiPaginaPostProduzionePaginaPostProduzione;
       'api::pagina-privacy-policy-newsletter.pagina-privacy-policy-newsletter': ApiPaginaPrivacyPolicyNewsletterPaginaPrivacyPolicyNewsletter;
       'api::pagina-privacy-policy-psl.pagina-privacy-policy-psl': ApiPaginaPrivacyPolicyPslPaginaPrivacyPolicyPsl;
+      'api::pagina-privacy-policy.pagina-privacy-policy': ApiPaginaPrivacyPolicyPaginaPrivacyPolicy;
       'api::pagina-service.pagina-service': ApiPaginaServicePaginaService;
       'api::pagina-servizi.pagina-servizi': ApiPaginaServiziPaginaServizi;
       'api::pagina-storia-azienda-mutante.pagina-storia-azienda-mutante': ApiPaginaStoriaAziendaMutantePaginaStoriaAziendaMutante;
