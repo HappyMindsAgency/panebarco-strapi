@@ -2488,6 +2488,12 @@ export interface ApiTeamTeam extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    linkedin: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::team.team'>;
     nome: Schema.Attribute.String &

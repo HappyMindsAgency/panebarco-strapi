@@ -70,6 +70,14 @@
         }
       },
       "required": true
+    },
+    "linkedin": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

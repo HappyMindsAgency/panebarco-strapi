@@ -248,6 +248,8 @@ export interface SharedIntro extends Struct.ComponentSchema {
     contenuto: Schema.Attribute.RichText;
     media: Schema.Attribute.Media<'images' | 'videos'>;
     mediaBool: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    pulsante: Schema.Attribute.Component<'shared.pulsante', false>;
+    pulsanteBool: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     titolo: Schema.Attribute.String;
   };
 }
