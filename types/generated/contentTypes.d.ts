@@ -1001,10 +1001,7 @@ export interface ApiPaginaCommercialsPaginaCommercials
     };
   };
   attributes: {
-    containerComposit: Schema.Attribute.Component<
-      'shared.container-composit',
-      false
-    > &
+    composit: Schema.Attribute.Component<'shared.composit', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1213,6 +1210,12 @@ export interface ApiPaginaHomePagePaginaHomePage
           localized: false;
         };
       }>;
+    originals: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1252,13 +1255,7 @@ export interface ApiPaginaOriginalsPaginaOriginals
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    ctaContattaci: Schema.Attribute.Component<'shared.cta-contattaci', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    ctaOscar: Schema.Attribute.Component<'shared.cta', false> &
+    cta: Schema.Attribute.Component<'shared.card-cta', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1288,10 +1285,15 @@ export interface ApiPaginaOriginalsPaginaOriginals
           localized: false;
         };
       }>;
-    originalsEvidenza: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::original.original'
-    >;
+    originalsEvidenza: Schema.Attribute.Component<
+      'shared.composit-originals',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1438,12 +1440,6 @@ export interface ApiPaginaPaneblogPaginaPaneblog
           localized: true;
         };
       }>;
-    intro: Schema.Attribute.Component<'shared.intro', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1501,12 +1497,6 @@ export interface ApiPaginaPortfolioPaginaPortfolio
           localized: true;
         };
       }>;
-    intro: Schema.Attribute.Component<'shared.intro', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1519,10 +1509,12 @@ export interface ApiPaginaPortfolioPaginaPortfolio
           localized: false;
         };
       }>;
-    progettiEvidenza: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::progetto.progetto'
-    >;
+    progettiEvidenza: Schema.Attribute.Component<'shared.composit', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1553,10 +1545,7 @@ export interface ApiPaginaPostProduzionePaginaPostProduzione
     };
   };
   attributes: {
-    containerComposit: Schema.Attribute.Component<
-      'shared.container-composit',
-      false
-    > &
+    composit: Schema.Attribute.Component<'shared.composit', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1774,10 +1763,7 @@ export interface ApiPaginaServicePaginaService extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    containerComposit: Schema.Attribute.Component<
-      'shared.container-composit',
-      false
-    > &
+    composit: Schema.Attribute.Component<'shared.composit', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1932,12 +1918,6 @@ export interface ApiPaginaStoriaAziendaMutantePaginaStoriaAziendaMutante
           localized: true;
         };
       }>;
-    contenuto: Schema.Attribute.RichText &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1979,6 +1959,12 @@ export interface ApiPaginaStoriaAziendaMutantePaginaStoriaAziendaMutante
         };
       }>;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    titoloStoriaAzienda: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2120,13 +2106,13 @@ export interface ApiPaginaTantoAltroPaginaTantoAltro
           localized: false;
         };
       }>;
-    pensieri: Schema.Attribute.Component<'shared.card-link', true> &
+    pensieri: Schema.Attribute.Component<'shared.card-cta', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    progettiSpeciali: Schema.Attribute.RichText &
+    progettiSpeciali: Schema.Attribute.Component<'shared.composit', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

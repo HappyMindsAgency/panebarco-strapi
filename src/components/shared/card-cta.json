@@ -1,29 +1,26 @@
 {
-  "collectionName": "components_shared_composits",
+  "collectionName": "components_shared_card_ctas",
   "info": {
-    "displayName": "compositProgetti",
-    "icon": "gate"
+    "displayName": "cardCta",
+    "icon": "cursor"
   },
   "options": {},
   "attributes": {
     "titolo": {
       "type": "string"
     },
-    "sottotitolo": {
-      "type": "string"
-    },
     "contenuto": {
       "type": "richtext"
-    },
-    "progetti": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::progetto.progetto"
     },
     "pulsante": {
       "type": "component",
       "component": "shared.pulsante",
       "repeatable": false
+    },
+    "bgColor": {
+      "type": "string",
+      "minLength": 7,
+      "maxLength": 7
     }
   },
   "config": {}

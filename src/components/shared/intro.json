@@ -34,22 +34,8 @@
         "videos"
       ]
     },
-    "pulsanteBool": {
-      "type": "boolean",
-      "default": false
-    },
     "pulsante": {
       "type": "component",
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "pulsanteBool"
-            },
-            true
-          ]
-        }
-      },
       "component": "shared.pulsante",
       "repeatable": false
     }

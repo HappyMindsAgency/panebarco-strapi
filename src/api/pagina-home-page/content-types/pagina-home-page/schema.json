@@ -54,6 +54,14 @@
       "component": "shared.card-link",
       "repeatable": true
     },
+    "originals": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "seo": {
       "type": "component",
       "pluginOptions": {

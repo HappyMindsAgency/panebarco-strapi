@@ -34,16 +34,6 @@
       "component": "shared.header",
       "repeatable": false
     },
-    "intro": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.intro",
-      "repeatable": false
-    },
     "cta": {
       "type": "component",
       "pluginOptions": {

@@ -21,7 +21,7 @@
     },
     "item": {
       "type": "component",
-      "component": "shared.contenuto",
+      "component": "shared.card-valore",
       "repeatable": true
     }
   },

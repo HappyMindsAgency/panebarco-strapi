@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_shared_composits",
+  "collectionName": "components_shared_composit_originals",
   "info": {
-    "displayName": "compositProgetti",
-    "icon": "gate"
+    "displayName": "compositOriginals",
+    "icon": "star"
   },
   "options": {},
   "attributes": {
@@ -15,10 +15,10 @@
     "contenuto": {
       "type": "richtext"
     },
-    "progetti": {
+    "originals": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::progetto.progetto"
+      "target": "api::original.original"
     },
     "pulsante": {
       "type": "component",

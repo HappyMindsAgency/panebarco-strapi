@@ -44,15 +44,15 @@
       "component": "shared.intro",
       "repeatable": false
     },
-    "containerComposit": {
+    "composit": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "shared.container-composit",
-      "repeatable": false
+      "component": "shared.composit",
+      "repeatable": true
     },
     "cta": {
       "type": "component",

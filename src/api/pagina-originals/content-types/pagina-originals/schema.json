@@ -45,28 +45,13 @@
       "repeatable": false
     },
     "originalsEvidenza": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::original.original"
-    },
-    "ctaOscar": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "shared.cta",
-      "repeatable": false
-    },
-    "ctaContattaci": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.cta-contattaci",
+      "component": "shared.composit-originals",
       "repeatable": false
     },
     "seo": {
@@ -78,6 +63,16 @@
       },
       "component": "seo-component.seo",
       "repeatable": false
+    },
+    "cta": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.card-cta",
+      "repeatable": true
     }
   }
 }

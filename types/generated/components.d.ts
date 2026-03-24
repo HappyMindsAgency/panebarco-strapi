@@ -67,6 +67,24 @@ export interface SharedCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCardCta extends Struct.ComponentSchema {
+  collectionName: 'components_shared_card_ctas';
+  info: {
+    displayName: 'cardCta';
+    icon: 'cursor';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 7;
+        minLength: 7;
+      }>;
+    contenuto: Schema.Attribute.RichText;
+    pulsante: Schema.Attribute.Component<'shared.pulsante', false>;
+    titolo: Schema.Attribute.String;
+  };
+}
+
 export interface SharedCardLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_card_links';
   info: {
@@ -83,6 +101,23 @@ export interface SharedCardLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCardValore extends Struct.ComponentSchema {
+  collectionName: 'components_shared_card_valores';
+  info: {
+    displayName: 'cardValore';
+    icon: 'crown';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 7;
+        minLength: 7;
+      }>;
+    contenuto: Schema.Attribute.RichText;
+    titolo: Schema.Attribute.String;
+  };
+}
+
 export interface SharedComposit extends Struct.ComponentSchema {
   collectionName: 'components_shared_composits';
   info: {
@@ -92,6 +127,7 @@ export interface SharedComposit extends Struct.ComponentSchema {
   attributes: {
     contenuto: Schema.Attribute.RichText;
     progetti: Schema.Attribute.Relation<'oneToMany', 'api::progetto.progetto'>;
+    pulsante: Schema.Attribute.Component<'shared.pulsante', false>;
     sottotitolo: Schema.Attribute.String;
     titolo: Schema.Attribute.String;
   };
@@ -107,7 +143,6 @@ export interface SharedCompositCard extends Struct.ComponentSchema {
     contenuto: Schema.Attribute.RichText;
     item: Schema.Attribute.Component<'shared.card', true>;
     pulsante: Schema.Attribute.Component<'shared.pulsante', false>;
-    pulsanteBool: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     sottotitolo: Schema.Attribute.String;
     titolo: Schema.Attribute.String;
   };
@@ -122,6 +157,21 @@ export interface SharedCompositCaseHistory extends Struct.ComponentSchema {
   attributes: {
     caseHistory: Schema.Attribute.Component<'shared.card-link', true>;
     contenuto: Schema.Attribute.RichText;
+    sottotitolo: Schema.Attribute.String;
+    titolo: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCompositOriginals extends Struct.ComponentSchema {
+  collectionName: 'components_shared_composit_originals';
+  info: {
+    displayName: 'compositOriginals';
+    icon: 'star';
+  };
+  attributes: {
+    contenuto: Schema.Attribute.RichText;
+    originals: Schema.Attribute.Relation<'oneToMany', 'api::original.original'>;
+    pulsante: Schema.Attribute.Component<'shared.pulsante', false>;
     sottotitolo: Schema.Attribute.String;
     titolo: Schema.Attribute.String;
   };
@@ -249,7 +299,6 @@ export interface SharedIntro extends Struct.ComponentSchema {
     media: Schema.Attribute.Media<'images' | 'videos'>;
     mediaBool: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     pulsante: Schema.Attribute.Component<'shared.pulsante', false>;
-    pulsanteBool: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     titolo: Schema.Attribute.String;
   };
 }
@@ -367,7 +416,7 @@ export interface SharedShortList extends Struct.ComponentSchema {
   attributes: {
     contenuto: Schema.Attribute.RichText;
     cover: Schema.Attribute.Media<'images'>;
-    item: Schema.Attribute.Component<'shared.contenuto', true>;
+    item: Schema.Attribute.Component<'shared.card-valore', true>;
     titolo: Schema.Attribute.String;
   };
 }
@@ -425,10 +474,13 @@ declare module '@strapi/strapi' {
       'seo-component.meta-social': SeoComponentMetaSocial;
       'seo-component.seo': SeoComponentSeo;
       'shared.card': SharedCard;
+      'shared.card-cta': SharedCardCta;
       'shared.card-link': SharedCardLink;
+      'shared.card-valore': SharedCardValore;
       'shared.composit': SharedComposit;
       'shared.composit-card': SharedCompositCard;
       'shared.composit-case-history': SharedCompositCaseHistory;
+      'shared.composit-originals': SharedCompositOriginals;
       'shared.composit-team': SharedCompositTeam;
       'shared.container-composit': SharedContainerComposit;
       'shared.contenuto': SharedContenuto;

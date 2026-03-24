@@ -44,8 +44,8 @@
       "component": "shared.intro",
       "repeatable": false
     },
-    "contenuto": {
-      "type": "richtext",
+    "titoloStoriaAzienda": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true

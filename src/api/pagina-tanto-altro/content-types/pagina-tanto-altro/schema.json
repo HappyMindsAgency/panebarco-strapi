@@ -45,12 +45,14 @@
       "repeatable": false
     },
     "progettiSpeciali": {
-      "type": "richtext",
+      "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "shared.composit",
+      "repeatable": false
     },
     "pensieri": {
       "type": "component",
@@ -59,7 +61,7 @@
           "localized": true
         }
       },
-      "component": "shared.card-link",
+      "component": "shared.card-cta",
       "repeatable": true
     },
     "ctaLibrary": {

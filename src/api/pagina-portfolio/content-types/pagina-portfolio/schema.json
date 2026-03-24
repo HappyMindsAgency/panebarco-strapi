@@ -34,21 +34,6 @@
       "component": "shared.header",
       "repeatable": false
     },
-    "intro": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.intro",
-      "repeatable": false
-    },
-    "progettiEvidenza": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::progetto.progetto"
-    },
     "cta": {
       "type": "component",
       "pluginOptions": {
@@ -67,6 +52,16 @@
         }
       },
       "component": "seo-component.seo",
+      "repeatable": false
+    },
+    "progettiEvidenza": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.composit",
       "repeatable": false
     }
   }

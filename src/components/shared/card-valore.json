@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_card_valores",
+  "info": {
+    "displayName": "cardValore",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "titolo": {
+      "type": "string"
+    },
+    "contenuto": {
+      "type": "richtext"
+    },
+    "bgColor": {
+      "type": "string",
+      "minLength": 7,
+      "maxLength": 7
+    }
+  },
+  "config": {}
+}
