@@ -1359,7 +1359,7 @@ export interface ApiPaginaPanebarcosPaginaPanebarcos
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    cta: Schema.Attribute.Component<'shared.cta-contattaci', false> &
+    cta: Schema.Attribute.Component<'shared.cta', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

@@ -61,7 +61,7 @@
           "localized": true
         }
       },
-      "component": "shared.cta-contattaci",
+      "component": "shared.cta",
       "repeatable": false
     },
     "seo": {

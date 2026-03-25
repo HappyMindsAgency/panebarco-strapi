@@ -15,11 +15,12 @@
     "sottotitolo": {
       "type": "string"
     },
-    "videoBackground": {
+    "mediaBackground": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
-        "videos"
+        "videos",
+        "images"
       ]
     },
     "imgTeamBool": {

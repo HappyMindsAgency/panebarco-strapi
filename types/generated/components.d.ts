@@ -281,10 +281,10 @@ export interface SharedHeader extends Struct.ComponentSchema {
   attributes: {
     imgTeam: Schema.Attribute.Media<'images'>;
     imgTeamBool: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    mediaBackground: Schema.Attribute.Media<'videos' | 'images'>;
     sottotitolo: Schema.Attribute.String;
     titolo: Schema.Attribute.String;
     titoloTana: Schema.Attribute.String;
-    videoBackground: Schema.Attribute.Media<'videos'>;
   };
 }
 
