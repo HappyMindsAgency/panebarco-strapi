@@ -1509,7 +1509,10 @@ export interface ApiPaginaPortfolioPaginaPortfolio
           localized: false;
         };
       }>;
-    progettiEvidenza: Schema.Attribute.Component<'shared.composit', false> &
+    originalsEvidenza: Schema.Attribute.Component<
+      'shared.composit-originals',
+      false
+    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1517,6 +1520,12 @@ export interface ApiPaginaPortfolioPaginaPortfolio
       }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo-component.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    tuttiProgetti: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

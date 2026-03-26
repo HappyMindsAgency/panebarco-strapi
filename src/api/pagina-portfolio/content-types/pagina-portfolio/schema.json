@@ -34,6 +34,24 @@
       "component": "shared.header",
       "repeatable": false
     },
+    "originalsEvidenza": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.composit-originals",
+      "repeatable": false
+    },
+    "tuttiProgetti": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "cta": {
       "type": "component",
       "pluginOptions": {
@@ -52,16 +70,6 @@
         }
       },
       "component": "seo-component.seo",
-      "repeatable": false
-    },
-    "progettiEvidenza": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.composit",
       "repeatable": false
     }
   }
