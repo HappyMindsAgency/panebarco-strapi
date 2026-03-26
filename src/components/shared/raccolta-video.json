@@ -11,6 +11,11 @@
     },
     "contenuto": {
       "type": "richtext"
+    },
+    "video": {
+      "type": "component",
+      "component": "shared.two-types-video",
+      "repeatable": true
     }
   },
   "config": {}

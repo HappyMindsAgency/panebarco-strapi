@@ -403,6 +403,7 @@ export interface SharedRaccoltaVideo extends Struct.ComponentSchema {
   attributes: {
     contenuto: Schema.Attribute.RichText;
     titolo: Schema.Attribute.String;
+    video: Schema.Attribute.Component<'shared.two-types-video', true>;
   };
 }
 
