@@ -151,6 +151,30 @@
       "relation": "manyToMany",
       "target": "api::tipologia-progetto.tipologia-progetto",
       "inversedBy": "originals"
+    },
+    "target": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "formato": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "durata": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

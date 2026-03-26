@@ -917,6 +917,18 @@ export interface ApiOriginalOriginal extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    durata: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    formato: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     inEvidenza: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -967,6 +979,12 @@ export interface ApiOriginalOriginal extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::status.status'
     >;
+    target: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     tipologie_progetto: Schema.Attribute.Relation<
       'manyToMany',
       'api::tipologia-progetto.tipologia-progetto'
