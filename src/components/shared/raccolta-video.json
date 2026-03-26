@@ -11,11 +11,6 @@
     },
     "contenuto": {
       "type": "richtext"
-    },
-    "video": {
-      "type": "component",
-      "component": "shared.embed",
-      "repeatable": true
     }
   },
   "config": {}

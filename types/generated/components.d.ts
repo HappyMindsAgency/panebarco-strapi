@@ -403,7 +403,6 @@ export interface SharedRaccoltaVideo extends Struct.ComponentSchema {
   attributes: {
     contenuto: Schema.Attribute.RichText;
     titolo: Schema.Attribute.String;
-    video: Schema.Attribute.Component<'shared.embed', true>;
   };
 }
 
@@ -451,6 +450,20 @@ export interface SharedTitolo extends Struct.ComponentSchema {
   };
   attributes: {
     titolo: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTwoTypesVideo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_two_types_videos';
+  info: {
+    displayName: 'twoTypesVideo';
+    icon: 'play';
+  };
+  attributes: {
+    embed: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<'plugin::oembed.oembed'>;
+    video: Schema.Attribute.Media<'videos'>;
+    videoBool: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }
 
@@ -502,6 +515,7 @@ declare module '@strapi/strapi' {
       'shared.slider': SharedSlider;
       'shared.sottotitolo-typing': SharedSottotitoloTyping;
       'shared.titolo': SharedTitolo;
+      'shared.two-types-video': SharedTwoTypesVideo;
       'shared.video-header': SharedVideoHeader;
     }
   }

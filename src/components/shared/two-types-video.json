@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_shared_two_types_videos",
+  "info": {
+    "displayName": "twoTypesVideo",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "videoBool": {
+      "type": "boolean",
+      "default": false
+    },
+    "embed": {
+      "type": "customField",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "videoBool"
+            },
+            false
+          ]
+        }
+      },
+      "customField": "plugin::oembed.oembed"
+    },
+    "video": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "videoBool"
+            },
+            true
+          ]
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    }
+  },
+  "config": {}
+}
