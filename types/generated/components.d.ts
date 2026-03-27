@@ -223,7 +223,7 @@ export interface SharedCta extends Struct.ComponentSchema {
   };
   attributes: {
     contenuto: Schema.Attribute.RichText;
-    cover: Schema.Attribute.Media<'images'>;
+    cover: Schema.Attribute.Media<'images' | 'videos'>;
     pulsante: Schema.Attribute.Component<'shared.pulsante', false>;
     sottotitolo: Schema.Attribute.String;
     titolo: Schema.Attribute.String;
