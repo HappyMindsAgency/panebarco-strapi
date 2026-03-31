@@ -465,6 +465,12 @@ export interface ApiArticoloArticolo extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    dataPubblicazione: Schema.Attribute.DateTime &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     inEvidenza: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
