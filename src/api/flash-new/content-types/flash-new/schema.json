@@ -39,7 +39,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 200
     },
     "data": {
       "type": "date",
