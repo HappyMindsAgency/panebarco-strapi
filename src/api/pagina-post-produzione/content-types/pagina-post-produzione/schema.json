@@ -42,7 +42,7 @@
         }
       },
       "component": "shared.intro",
-      "repeatable": true
+      "repeatable": false
     },
     "composit": {
       "type": "component",

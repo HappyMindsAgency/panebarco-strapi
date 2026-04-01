@@ -1602,7 +1602,7 @@ export interface ApiPaginaPostProduzionePaginaPostProduzione
           localized: true;
         };
       }>;
-    intro: Schema.Attribute.Component<'shared.intro', true> &
+    intro: Schema.Attribute.Component<'shared.intro', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
