@@ -728,69 +728,6 @@ export interface ApiFlashNewFlashNew extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiLeadLead extends Struct.CollectionTypeSchema {
-  collectionName: 'leads';
-  info: {
-    displayName: 'Leads';
-    pluralName: 'leads';
-    singularName: 'lead';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    cognome: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::lead.lead'>;
-    mail: Schema.Attribute.Email &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    messaggio: Schema.Attribute.RichText &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    nome: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    oggetto: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiMoodboardMoodboard extends Struct.CollectionTypeSchema {
   collectionName: 'moodboards';
   info: {
@@ -2521,8 +2458,7 @@ export interface ApiTeamTeam extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    ruoloTana: Schema.Attribute.RichText &
-      Schema.Attribute.Required &
+    ruoloTana: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -3113,7 +3049,6 @@ declare module '@strapi/strapi' {
       'api::categoria-articolo.categoria-articolo': ApiCategoriaArticoloCategoriaArticolo;
       'api::categoria-progetto.categoria-progetto': ApiCategoriaProgettoCategoriaProgetto;
       'api::flash-new.flash-new': ApiFlashNewFlashNew;
-      'api::lead.lead': ApiLeadLead;
       'api::moodboard.moodboard': ApiMoodboardMoodboard;
       'api::original.original': ApiOriginalOriginal;
       'api::pagina-commercials.pagina-commercials': ApiPaginaCommercialsPaginaCommercials;
