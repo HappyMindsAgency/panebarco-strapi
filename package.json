@@ -16,13 +16,14 @@
   },
   "dependencies": {
     "@strapi-community/plugin-seo": "^2.1.1",
-    "@strapi/plugin-cloud": "5.36.1",
-    "@strapi/plugin-users-permissions": "5.36.1",
-    "@strapi/strapi": "5.36.1",
+    "@strapi/plugin-cloud": "5.48.0",
+    "@strapi/plugin-users-permissions": "5.48.0",
+    "@strapi/strapi": "5.48.0",
     "better-sqlite3": "12.4.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "strapi-plugin-hm-ai-translate": "^0.4.6",
     "strapi-plugin-oembed": "^2.0.2",
     "styled-components": "^6.0.0"
   },
